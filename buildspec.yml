@@ -10,10 +10,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - mvn clean prepare-package war:explode
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/stalk-0.0.1-SNAPSHOT.war
+    - target/deploy/**/*
